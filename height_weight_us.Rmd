@@ -31,7 +31,8 @@ nhanes |>
   facet_wrap("gender")+
   labs(title="Height and Weight in the US by Gender", x= "Height", y= "Weight", subtitle= "Males are heavier and taller than females on average.", 
        caption= "Data: National Health and Nutrition Examination Survey", 
-       color= "Gender")
+       color= "Gender")+
+  theme_bw()
 ```
 
 
