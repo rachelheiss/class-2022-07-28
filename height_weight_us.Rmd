@@ -1,0 +1,35 @@
+---
+title: "Height and Weight in US by Gender"
+author: "Rachel Heiss"
+date: "2022-07-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+```{r, include=FALSE}
+library(primer.data)
+library(tidyverse)
+# loading libraries
+
+```
+```{r}
+nhanes |>
+  select(height, weight, age, gender) |>
+  filter(age >=18) |>
+  drop_na(height, weight) |>
+   
+  #filtering for only height and weight
+  #keeping adults
+  #starting plot
+
+  ggplot(mapping= aes(x=height, y=weight, color=gender))+
+  geom_jitter(alpha=.5, size= .8)+
+  facet_wrap("gender")+
+  labs(title="Height and Weight in the US by Gender", x= "Height", y= "Weight", subtitle= "Males are heavier and taller than females on average.", 
+       caption= "Data: National Health and Nutrition Examination Survey", 
+       color= "Gender")
+```
+
+
