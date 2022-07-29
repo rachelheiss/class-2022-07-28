@@ -8,12 +8,14 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
 ```{r, include=FALSE}
 library(primer.data)
 library(tidyverse)
 # loading libraries
 
 ```
+
 ```{r}
 nhanes |>
   select(height, weight, age, gender) |>
